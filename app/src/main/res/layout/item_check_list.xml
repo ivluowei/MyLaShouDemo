@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/view_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/check_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/more_hui"
+            android:scrollbars="none">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <include layout="@layout/view_line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/more_hui"
+        android:layout_height="180px"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="340px"
+            android:layout_height="100px"
+            android:background="@drawable/bt_done"
+            android:textColor="@color/white"
+            android:textSize="46px"
+            android:text="@string/compete"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#b0000000"
+        android:orientation="horizontal">
+    </LinearLayout>
+</LinearLayout>

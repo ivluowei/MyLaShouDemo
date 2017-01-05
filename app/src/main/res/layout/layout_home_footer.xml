@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <include layout="@layout/view_line"/>
+
+    <LinearLayout
+        android:id="@+id/all_shop"
+        android:layout_width="match_parent"
+        android:background="@drawable/selector_item_home_bg"
+        android:layout_height="160px"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all_tua_gou"
+            android:textColor="@color/blank"
+            android:textSize="46px"/>
+    </LinearLayout>
+    <include layout="@layout/view_line"/>
+</LinearLayout>

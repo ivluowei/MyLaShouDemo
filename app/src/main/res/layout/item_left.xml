@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_lfet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:src="@drawable/bg_login"/>
+        <TextView
+            android:id="@+id/title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:layout_toEndOf="@+id/img_lfet"
+            android:layout_toRightOf="@+id/img_lfet"
+            android:text="美食"
+            android:textColor="@color/blank"
+            android:textSize="42px"/>
+        <TextView
+            android:id="@+id/num_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40px"
+            android:layout_toLeftOf="@+id/left_arrow"
+            android:text="5859"
+            android:textColor="@color/more_more_hui"
+            android:textSize="42px"/>
+
+        <ImageView
+            android:id="@+id/left_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_marginRight="20px"
+            android:src="@drawable/iv_right"/>
+    </RelativeLayout>
+</LinearLayout>

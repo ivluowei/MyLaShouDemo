@@ -1,0 +1,153 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <cn.lashou.widget.listview.XListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:background="@color/white"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"/>
+
+        <Button
+            android:id="@+id/top_btn"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="200px"
+            android:layout_marginRight="60px"
+            android:background="@drawable/ic_to_top"
+            android:gravity="center"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/title_bar"
+            style="@style/home_title_bar_style"
+            android:layout_height="180px"
+            android:fitsSystemWindows="true"
+            android:paddingTop="30px">
+
+            <LinearLayout
+                android:id="@+id/location_lay"
+                android:layout_width="190px"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="left|center"
+                    android:maxLines="2"
+                    android:text="北京"
+                    android:textColor="@color/white"
+                    android:textSize="36px"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12px"
+                    android:src="@drawable/nav_icon_aroow_up_s"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_right_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/scan_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:paddingLeft="22px"
+                    android:paddingRight="22px"
+                    android:src="@drawable/nav_icon_scan_nor"
+                    android:visibility="visible"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_msg_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/msg_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nav_icon_message_nor"
+                        android:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/news_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-16px"
+                        android:layout_marginTop="14px"
+                        android:layout_toRightOf="@id/msg_iv"
+                        android:background="@drawable/icon_message_nu"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#ffff621c"
+                        android:textSize="18px"
+                        android:visibility="invisible"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/inputLL"
+                android:layout_width="fill_parent"
+                android:layout_height="85px"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/ll_right_layout"
+                android:layout_toRightOf="@id/location_lay"
+                android:background="@drawable/edittext_round_background_whitee"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="12px"
+                android:paddingTop="12px"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="10px"
+                    android:src="@drawable/ic_search"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/search_edittext_hint"
+                    android:textColor="#ffb6b6b6"
+                    android:textSize="32px"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

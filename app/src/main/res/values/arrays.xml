@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 首页导航 -->
+    <string-array name="bottom_bar_labels">
+        <item>@string/tab1</item>
+        <item>@string/tab2</item>
+        <item>@string/tab3</item>
+        <item>@string/tab4</item>
+    </string-array>
+
+    <array name="home_bar_lables">
+
+        <item>美食</item>
+        <item>电影</item>
+        <item>酒店</item>
+        <item>休闲娱乐</item>
+        <item>自助餐</item>
+        <item>KTV</item>
+        <item>蛋糕甜点</item>
+        <item>旅游</item>
+        <item>购物</item>
+        <item>摄影写真</item>
+        <item>丽人</item>
+        <item>生活服务</item>
+        <item>手机充值</item>
+        <item>代金券</item>
+        <item>今日新单</item>
+        <item>全部分类</item>
+
+    </array>
+
+    <array name="paixun_list">
+
+        <item>智能排序</item>
+        <item>距离最近</item>
+        <item>最新发布</item>
+        <item>人气最高</item>
+        <item>价格最低</item>
+        <item>价格最高</item>
+
+    </array>
+
+    <array name="select_list">
+
+        <item>只看免预约</item>
+        <item>只看代金券</item>
+        <item>节假日通用</item>
+
+    </array>
+
+    <array name="home_bar_icon">
+
+        <item>@drawable/icon_home_food_99</item>
+        <item>@drawable/icon_home_movie_29</item>
+        <item>@drawable/icon_home_hotel_300</item>
+        <item>@drawable/icon_home_happy_2</item>
+        <item>@drawable/icon_home_self_189</item>
+        <item>@drawable/icon_home_ktv_31</item>
+        <item>@drawable/icon_home_25</item>
+        <item>@drawable/icon_home_400</item>
+        <item>@drawable/icon_home_3</item>
+        <item>@drawable/icon_home_37</item>
+        <item>@drawable/icon_home_442</item>
+        <item>@drawable/icon_home_life_46</item>
+        <item>@drawable/icon_home_7777</item>
+        <item>@drawable/icon_home_8888</item>
+        <item>@drawable/icon_home_999</item>
+        <item>@drawable/icon_home_all_0</item>
+
+    </array>
+
+
+
+</resources>

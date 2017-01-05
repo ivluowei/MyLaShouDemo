@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/movie_one"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/hui"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260px"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:src="@drawable/icon_home_life_46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:text="@string/hot_play"
+                android:textColor="@color/more_more_hui"
+                android:textSize="46px"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:src="@drawable/icon_home_life_46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:text="@string/quick_play"
+                android:textColor="@color/more_more_hui"
+                android:textSize="46px"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:src="@drawable/icon_home_life_46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:text="@string/select_zuo"
+                android:textColor="@color/more_more_hui"
+                android:textSize="46px"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:src="@drawable/icon_home_life_46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:text="@string/movie_tuan_gou"
+                android:textColor="@color/more_more_hui"
+                android:textSize="46px"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="550px"
+        android:layout_marginTop="30px"
+        android:background="@color/white"
+        android:scrollbars="none">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/horizontal_RecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+        </android.support.v7.widget.RecyclerView>
+    </HorizontalScrollView>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="30px"/>
+
+</LinearLayout>

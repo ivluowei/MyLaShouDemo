@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/more_hui"
+              android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180px"
+        android:background="@color/title_yellow"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="54px"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/tab2"
+                android:textColor="@color/white"
+                android:textSize="56px"/>
+
+            <ImageView
+                android:id="@+id/map"
+                android:layout_width="180px"
+                android:layout_height="match_parent"
+                android:padding="30px"
+                android:background="@drawable/imageview_btn_selector"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right_map_white"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/view_select_category"/>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/dan_hui"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.lashou.widget.listview.XListView
+            android:id="@+id/surroundlistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@null"
+            android:scrollbars="none"
+            android:listSelector="@android:color/transparent">
+        </cn.lashou.widget.listview.XListView>
+
+
+        <cn.lashou.widget.LoadingStateView
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+        </cn.lashou.widget.LoadingStateView>
+    </FrameLayout>
+
+</LinearLayout>

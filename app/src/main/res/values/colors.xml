@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6F36</color>
+    <color name="colorPrimaryDark">#FF6F36</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="title_yellow">#FE6F34</color>
+    <color name="more_hui">#F7F7F7</color>
+    <color name="dan_hui">#DCDCDC</color>
+    <color name="dan_ju">#FEB5A5</color>
+    <color name="home_title_bar_color">#ffff6f36</color>
+    <color name="content_color">#ff687186</color>
+    <color name="white">#ffffff</color>
+    <color name="blank">#000000</color>
+    <color name="app_white">#fff1f1f2</color>
+    <color name="login_unable_bg_green">#ff90e4da</color>
+    <color name="login_unable_bg">#ffcdced0</color>
+    <color name="gray01">#80666666</color>
+    <color name="transparent">#00000000</color>
+    <color name="image_view_btn_pressed_bgColor">#30000000</color>
+    <!--other-->
+    <color name="jia_red">#E6544E</color>
+    <color name="blue">#2297F5</color>
+    <color name="jia_yellow">#E17D27</color>
+    <color name="dan_blue">#36C7E4</color>
+    <color name="dan_purple">#AA8DC7</color>
+    <color name="cyan">#7CDB60</color>
+    <color name="dan_yellow">#F8C47B</color>
+    <color name="hui">#F6F6F6</color>
+    <color name="text_hui">#ADADAD</color>
+    <color name="more_more_hui">#666666</color>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="320px"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:orientation="vertical">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/rcy_image"
+            android:layout_width="300px"
+            android:layout_height="390px"
+            android:background="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/rcy_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8px"
+            android:singleLine="true"
+            android:text="标题标题标题标题标题标题"
+            android:textColor="@color/blank"
+            android:textSize="36px"/>
+
+        <TextView
+            android:id="@+id/rcy_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8px"
+            android:singleLine="true"
+            android:text="标题"
+            android:textColor="@color/colorPrimary"
+            android:textSize="34px"/>
+
+    </LinearLayout>
+</LinearLayout>
