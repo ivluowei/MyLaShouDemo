@@ -86,6 +86,7 @@ public class MovieCategoryActivity extends BaseActivity implements HttpListner<S
     private MovieCategoryActivity currentActivity;
     private HomeAdapter mHomeAdapter;
     private HorizontalAdapter mHorizontalAdapter;
+    //测试
     private List<HomeBean.ResultBean.GoodlistBean> mGoodlist;
     private List<MovieBean.ResultBean> mResultlist;
     private List<CategoryBean.DataBean> mDataList;
