@@ -1,25 +1,31 @@
 package cn.lashou.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
 import cn.lashou.R;
+import cn.lashou.activity.SplashActivity;
 import cn.lashou.constants.Constants;
 import cn.lashou.fragment.HomeFragment;
 import cn.lashou.fragment.MeFrgment;
 import cn.lashou.fragment.MoreFragment;
 import cn.lashou.fragment.SurroundingFragment;
+import cn.lashou.util.DownLoadManager;
+import cn.lashou.util.ToastUtils;
 import cn.lashou.widget.CustTabWidget;
 
 /**
  * Created by luow on 2016/8/10.
  */
 public class MainActivity extends AppCompatActivity implements CustTabWidget.onTabSelectedListener {
+    private static long lastTimeStamp = 0l;
     private CustTabWidget mCustTabWidget;
     private HomeFragment mHomeFragment;
     private SurroundingFragment mSurroundingFragment;
@@ -32,6 +38,19 @@ public class MainActivity extends AppCompatActivity implements CustTabWidget.onT
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    DownLoadManager.getFileFromServer(Constants.URL_AND_FIX);
+                } catch (Exception e) {
+
+                }
+            }
+        }).start();
+
+
         //透明状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -56,9 +75,13 @@ public class MainActivity extends AppCompatActivity implements CustTabWidget.onT
 
     }
 
-
     @Override
     public void onTabSelecete(int index) {
+        initTab(index);
+    }
+
+    public void setTab(int index) {
+        mCustTabWidget.setTabDisplay(this, index);
         initTab(index);
     }
 
@@ -122,6 +145,47 @@ public class MainActivity extends AppCompatActivity implements CustTabWidget.onT
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-    //    super.onSaveInstanceState(outState);
+        //    super.onSaveInstanceState(outState);
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        switch (intent.getIntExtra("appStatus", 0)) {
+            case Constants.STATUS_RESTART_APP:
+                protectApp();
+                break;
+            case Constants.STATUS_LOGOUT:
+                protectApp();
+                break;
+        }
+    }
+
+    protected void protectApp() {
+        startActivity(new Intent(MainActivity.this, SplashActivity.class));
+        finish();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            exitApplication();
+        }
+        return false;
+    }
+
+    /**
+     * 退出程序.
+     */
+    public void exitApplication() {
+        long currentTimeStamp = System.currentTimeMillis();
+        if (currentTimeStamp - lastTimeStamp > 1350L) {
+            ToastUtils.showToast(mContext, "再按一次退出");
+        } else {
+            finish();
+        }
+        lastTimeStamp = currentTimeStamp;
+    }
+
 }

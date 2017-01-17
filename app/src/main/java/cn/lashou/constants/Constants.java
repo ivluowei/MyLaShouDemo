@@ -31,7 +31,8 @@ public class Constants {
 
     public static final String URL_HOME_LIST = URL+ "homelist.txt";
 
-    public static final String URL_CATEGORY_DOUBLE_LIST = URL+ "cateDoublelist.txt";
+    public static final String URL_AND_FIX = URL+ "app_fix.apatch";
 
+    public static final String URL_CATEGORY_DOUBLE_LIST = URL+ "cateDoublelist.txt";
 
 }

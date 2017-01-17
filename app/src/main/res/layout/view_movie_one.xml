@@ -18,9 +18,9 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="130px"
-                android:layout_height="130px"
-                android:src="@drawable/icon_home_life_46"/>
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:src="@drawable/icon_home_life_46" android:id="@+id/imageView10"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,8 +37,8 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="130px"
-                android:layout_height="130px"
+                android:layout_width="120px"
+                android:layout_height="120px"
                 android:src="@drawable/icon_home_life_46"/>
 
             <TextView
@@ -56,8 +56,8 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="130px"
-                android:layout_height="130px"
+                android:layout_width="120px"
+                android:layout_height="120px"
                 android:src="@drawable/icon_home_life_46"/>
 
             <TextView
@@ -75,8 +75,8 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="130px"
-                android:layout_height="130px"
+                android:layout_width="120px"
+                android:layout_height="120px"
                 android:src="@drawable/icon_home_life_46"/>
 
             <TextView

@@ -65,20 +65,13 @@
         RedirectUrl="http://www.sharesdk.cn"
         ShareByAppClient="true"
         Enable="true" />
-
-    <TencentWeibo
-        Id="2" 
-        SortId="2"
-        AppKey="1105925872"
-        AppSecret="RgIwSkeYOtpbxafQ"
-        RedirectUri="http://sharesdk.cn"
-        Enable="true" />
     
     <QZone
-        Id="3"
-        SortId="3"
-        AppId="1105925872"
-        AppKey="RgIwSkeYOtpbxafQ"
+        Id="2"
+        SortId="2"
+        AppId="100371282"
+        AppKey="aed9b0303e3ed1e27bae87c33761161d"
+        ShareByAppClient="true"
         Enable="true" />
     
     <!-- 
@@ -94,19 +87,19 @@
 		默认值为false。此外，微信收藏不支持此字段。
 	-->
     <Wechat
-        Id="4"
-        SortId="4"
-        AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+        Id="3"
+        SortId="3"
+        AppId="wx942cbb4a14dfa96e"
+        AppSecret="18f713fb7c9ae052f552771cba370f47"
         BypassApproval="false"
         Enable="true" />
     
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 	<QQ
-        Id="7"
-        SortId="7"
-		AppId="1105925872"
-		AppKey="RgIwSkeYOtpbxafQ"
+        Id="4"
+        SortId="4"
+        AppId="1105925872"
+        AppKey="RgIwSkeYOtpbxafQ"
         ShareByAppClient="true"
         Enable="true" />
 

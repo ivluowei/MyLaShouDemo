@@ -36,6 +36,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.lashou.R;
+import cn.lashou.activity.GoodDetailsActivity;
 import cn.lashou.activity.MovieCategoryActivity;
 import cn.lashou.adapter.HomeAdapter;
 import cn.lashou.adapter.HomeGridViewAdapter;
@@ -45,12 +46,13 @@ import cn.lashou.adapter.HorizontalAdapter.OnRecycleViewClickListener;
 import cn.lashou.constants.Constants;
 import cn.lashou.core.BaseFragment;
 import cn.lashou.entity.BannerInfo;
-import cn.lashou.entity.HomeImgBean;
 import cn.lashou.entity.HomeBean;
+import cn.lashou.entity.HomeImgBean;
 import cn.lashou.entity.MovieBean;
 import cn.lashou.http.CallServer;
 import cn.lashou.http.HttpListner;
 import cn.lashou.listener.PageListener;
+import cn.lashou.ui.MainActivity;
 import cn.lashou.util.ToastUtils;
 import cn.lashou.widget.RollViewPager;
 import cn.lashou.widget.SupportMultipleScreensUtil;
@@ -58,7 +60,6 @@ import cn.lashou.widget.ViewPagerIndicator;
 import cn.lashou.widget.listview.XListView;
 import cn.lashou.widget.listview.XListView.IXListViewListener;
 import cn.lashou.widget.listview.XListView.OnXScrollListener;
-import timber.log.Timber;
 
 import static butterknife.ButterKnife.findById;
 
@@ -161,7 +162,6 @@ public class HomeFragment extends BaseFragment implements HttpListner, OnRecycle
                 mHomeImgBeanTwo.add(new HomeImgBean(iconName[i], typedArray.getResourceId(i, 0)));
             }
         }
-        Timber.tag(TAG);
 
         initHeaderView();
 
@@ -189,9 +189,14 @@ public class HomeFragment extends BaseFragment implements HttpListner, OnRecycle
         pos = position - 2;
         if (pos >= 0) {//判断pos>0，是禁用XListView的header监听
             if (pos == mGoodlist.size()) {
+                MainActivity activity = (MainActivity) getActivity();
+                activity.setTab(Constants.SURRONNDING_FRAGMENT_INDEX);
                 ToastUtils.showShort(getActivity(), "查看全部");
             } else {
-                ToastUtils.showShort(getActivity(), pos + "");
+                Intent it = new Intent(getActivity(), GoodDetailsActivity.class);
+                it.putExtra("title",mGoodlist.get(pos).getTitle());
+                it.putExtra("imageUrl",mGoodlist.get(pos).getImages().get(0).getImage().toString());
+                startActivity(it);
             }
         }
     }
@@ -261,7 +266,8 @@ public class HomeFragment extends BaseFragment implements HttpListner, OnRecycle
         mGridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), MovieCategoryActivity.class));
+                MainActivity activity = (MainActivity) getActivity();
+                activity.setTab(1);
                 ToastUtils.showShort(getActivity(), mHomeImgBeanTwo.get(position).getIconName());
             }
         });
@@ -349,7 +355,7 @@ public class HomeFragment extends BaseFragment implements HttpListner, OnRecycle
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.top_btn:
-                mXListView.setSelection(1);
+                mXListView.setSelection(Constants.SURRONNDING_FRAGMENT_INDEX);
                 break;
             case R.id.location_lay:
                 ToastUtils.showShort(getActivity(), "北京");
@@ -433,8 +439,6 @@ public class HomeFragment extends BaseFragment implements HttpListner, OnRecycle
             mTitleBar.getBackground().setAlpha(0);
             return;
         }
-
-        Timber.d("test Timber %d",adViewTopSpace);
 
         if (fraction >= 1f) {
             mTitleBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));

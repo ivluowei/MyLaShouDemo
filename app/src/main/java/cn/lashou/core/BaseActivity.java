@@ -1,20 +1,20 @@
 package cn.lashou.core;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import butterknife.ButterKnife;
 import cn.lashou.constants.Constants;
-import cn.lashou.util.ToastUtils;
+import cn.lashou.ui.MainActivity;
+import cn.lashou.util.AppStatusTracker;
 import cn.lashou.widget.SupportMultipleScreensUtil;
 
 /**
  * Created by lw on 2016/6/20.
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
-    private static long lastTimeStamp = 0l;
     public static final int MODE_BACK = 0;
     public static final int MODE_DRAWER = 1;
     public static final int MODE_NONE = 2;
@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        switch (0) {
+        switch (AppStatusTracker.getInstance().getAppStatus()) {
             case Constants.STATUS_FORCE_KILLED:
                 protectApp();
                 break;
@@ -51,9 +51,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     protected void protectApp() {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("appStatus", ConstantsValue.STATUS_RESTART_APP);
-//        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("appStatus", Constants.STATUS_RESTART_APP);
+        startActivity(intent);
     }
 
     @Override
@@ -64,21 +64,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
 
-    }
-
-    /**
-     * 退出程序.
-     *
-     * @param context
-     */
-    public static void exitApplication(Activity context) {
-        long currentTimeStamp = System.currentTimeMillis();
-        if (currentTimeStamp - lastTimeStamp > 1350L) {
-            ToastUtils.showToast(context, "再按一次退出");
-        } else {
-            context.finish();
-        }
-        lastTimeStamp = currentTimeStamp;
     }
 
 }

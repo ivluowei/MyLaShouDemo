@@ -1,5 +1,6 @@
 package cn.lashou.activity;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -314,10 +315,10 @@ public class MovieCategoryActivity extends BaseActivity implements HttpListner<S
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.map:
-
+                startActivity(new Intent(MovieCategoryActivity.this,MapActivity.class));
                 break;
             case R.id.ic_back:
-
+                onBackPressed();
                 break;
             case R.id.all_fenlei:
                 mImgFenlei.setImageResource(R.drawable.iv_filter_checked);

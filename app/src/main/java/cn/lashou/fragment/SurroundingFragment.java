@@ -1,5 +1,6 @@
 package cn.lashou.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.lashou.R;
+import cn.lashou.activity.MapActivity;
 import cn.lashou.adapter.HomeAdapter;
 import cn.lashou.constants.Constants;
 import cn.lashou.core.BaseFragment;
@@ -149,7 +151,7 @@ public class SurroundingFragment extends BaseFragment implements HttpListner, IX
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.map:
-                ToastUtils.showShort(getActivity(), "地图");
+                startActivity(new Intent(getActivity(), MapActivity.class));
                 break;
 
             case R.id.all_fenlei:
