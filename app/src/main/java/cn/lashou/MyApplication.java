@@ -6,6 +6,7 @@ import android.os.Environment;
 import com.alipay.euler.andfix.patch.PatchManager;
 import com.baidu.mapapi.SDKInitializer;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.squareup.leakcanary.LeakCanary;
 import com.yanzhenjie.nohttp.OkHttpNetworkExecutor;
 import com.yolanda.nohttp.NoHttp;
 
@@ -28,6 +29,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        AppStatusTracker.init();
+
+
         // 初始化
         mPatchManager = new PatchManager(this);
         mPatchManager.init("1.0"); // 版本号
@@ -44,7 +49,12 @@ public class MyApplication extends Application {
 
         }
 
-        AppStatusTracker.init();
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
 
         NoHttp.initialize(this, new NoHttp.Config()
                 .setConnectTimeout(30 * 1000) // 全局连接超时时间，单位毫秒。

@@ -33,8 +33,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.SplashActivity"
-                  android:launchMode="singleTask">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -53,7 +52,8 @@
                  android:process=":remote"/>
 
 
-        <activity android:name=".ui.MainActivity"/>
+        <activity android:name=".ui.MainActivity"
+                  android:launchMode="singleTask"/>
 
         <activity android:name=".activity.LoginActivity"/>
 
@@ -67,7 +67,7 @@
             android:name="cn.lashou.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

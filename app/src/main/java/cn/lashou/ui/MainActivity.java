@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +12,7 @@ import android.view.WindowManager;
 import cn.lashou.R;
 import cn.lashou.activity.SplashActivity;
 import cn.lashou.constants.Constants;
+import cn.lashou.core.BaseActivity;
 import cn.lashou.fragment.HomeFragment;
 import cn.lashou.fragment.MeFrgment;
 import cn.lashou.fragment.MoreFragment;
@@ -24,7 +24,7 @@ import cn.lashou.widget.CustTabWidget;
 /**
  * Created by luow on 2016/8/10.
  */
-public class MainActivity extends AppCompatActivity implements CustTabWidget.onTabSelectedListener {
+public class MainActivity extends BaseActivity implements CustTabWidget.onTabSelectedListener {
     private static long lastTimeStamp = 0l;
     private CustTabWidget mCustTabWidget;
     private HomeFragment mHomeFragment;
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements CustTabWidget.onT
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         new Thread(new Runnable() {
             @Override
@@ -63,7 +62,19 @@ public class MainActivity extends AppCompatActivity implements CustTabWidget.onT
         initData();
     }
 
-    private void initData() {
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
         mCustTabWidget = (CustTabWidget) findViewById(R.id.tab_widget);
         mCustTabWidget.setOnTabSelectedListener(this);
         mCustTabWidget.setTabDisplay(this, mIndex);
